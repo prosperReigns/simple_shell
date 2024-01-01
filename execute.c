@@ -12,7 +12,9 @@ int _execute(char **command, char **env)
 {
 	pid_t child;
 	int status;
+	char *full_cmd;
 
+	full_cmd = get_full_path(command[0], env);
 	child = fork();
 	if (child == -1)
 	{
@@ -23,12 +25,13 @@ int _execute(char **command, char **env)
 
 	if (child == 0)
 	{
-		execve(command[0], command, env);
+		execve(full_cmd, command, env);
 
-		perror(command[0]);
+		perror(full_cmd);
 	}
 	else
 	{
+		free(full_cmd);
 		waitpid(child, &status, 0);
 	}
 	return (status);
