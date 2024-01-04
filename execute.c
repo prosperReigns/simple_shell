@@ -8,7 +8,7 @@
  *return: status of execution
  */
 
-int _execute(char **av, char **command, char **env)
+int _execute(char ** av, char **command, char **env)
 {
 	pid_t child;
 	int status;
@@ -46,6 +46,14 @@ int _execute(char **av, char **command, char **env)
 	}
 	return (status);
 }
+
+/**
+ * print_error - prints error
+ * @av : arguement vector
+ * @cmd: command entered
+ *
+ * return: void
+ */
 
 void print_error(char **av, char **command)
 {

@@ -12,20 +12,13 @@ char** tokenize(char *input)
 	char *str;
 	char **command = NULL;
 	char *tokens;
-	int len = 0, i = 0, token_len = 0;
+	int i = 0;
 
 	if (input == NULL){
 		return NULL;
 	}
 
-	len = _strlen(input);
-	str = malloc(sizeof(char) * len + 1);
-	if (str == NULL)
-	{
-		exit(EXIT_FAILURE);
-	}
-
-	_strcpy(str, input);
+	str = _strdup(input);
 
 	command = malloc(sizeof(char *) * SIZE);
 	if (command == NULL)
@@ -35,26 +28,17 @@ char** tokenize(char *input)
 	}
 
 	tokens = strtok(str, " \t\n");
-	token_len = _strlen(tokens);
 
 	while (tokens != NULL)
 	{
-		command[i] = malloc(sizeof(char) * token_len + 1);
-		if (command[i] == NULL)
-		{
-			free(str); str = NULL;
-			free(command[i]); 
-			free(command); command = NULL;
-			exit(EXIT_FAILURE);
-		}
-		_strcpy(command[i], tokens);
-
+		command[i] = _strdup(tokens);
 		tokens = strtok(NULL, " \t\n");
 		i++;
 	}
 
 	command[i] = NULL;
 	free(str); str = NULL;
+	free(input);
 
 	return (command);
 }

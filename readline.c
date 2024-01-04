@@ -24,7 +24,7 @@ char *getinput(void)
 			return (NULL);
 		}
 
-		while (char_read > 0 && (buffer[char_read -1] == '\n' || buffer[char_read - 1] == ' ' || buffer[char_read - 1] == '\t'))
+		while (char_read > 0 && (buffer[char_read - 1] == '\n' || buffer[char_read - 1] == ' ' || buffer[char_read - 1] == '\t'))
 		{
 			buffer[--char_read] = '\0';
 		}
