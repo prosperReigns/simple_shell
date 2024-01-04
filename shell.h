@@ -13,7 +13,8 @@
 
 char *getinput(void);
 char **tokenize(char *str);
-int _execute(char **command, char **env);
+int _execute(char ** av, char **command, char **env);
+void print_error(char **av, char **command);
 void freeMemory(char **command);
 char *_getenv(char *path, char **env);
 char *get_full_path(char *cmd, char **env);

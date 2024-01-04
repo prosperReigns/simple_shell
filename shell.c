@@ -31,11 +31,8 @@ int main(__attribute__((unused)) int ac, __attribute__((unused)) char **av, char
 			free(input); input = NULL;
 		}
 
-		status = _execute(command, env);
+		status = _execute(av, command, env);
 
-		/*free memory*/
-		freeMemory(command); command = NULL;
-		free(input); input = NULL;
 	}
 
 
