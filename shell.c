@@ -9,7 +9,7 @@
  *return: always 0
  */
 
-int main(__attribute__((unused)) int ac, __attribute__((unused)) char **av, char **env)
+int main(__attribute__((unused)) int ac, char **av, char **env)
 {
 	while (1)
 	{
@@ -31,10 +31,9 @@ int main(__attribute__((unused)) int ac, __attribute__((unused)) char **av, char
 			free(input); input = NULL;
 		}
 
-		status = _execute(command, env);
+		status = _execute(av, command, env);
 
 		/*free memory*/
-		freeMemory(command); command = NULL;
 		free(input); input = NULL;
 	}
 

@@ -18,10 +18,14 @@ char *get_full_path(char *cmd, char **env)
 		char *full_path =  join_path(dir, '/', cmd);
 
 		if (path_exist(full_path) == 0)
+		{
+			free(path);
 			return (full_path);
+		}
 
 		dir = strtok(NULL, ":");
 	}
+	free(path);
 	return (NULL);
 }
 

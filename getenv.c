@@ -32,5 +32,6 @@ char *_getenv(char *path, char **env)
 		variable = _strdup(env[i]);
 	}
 
+	free(variable);
 	return (NULL);
 }
