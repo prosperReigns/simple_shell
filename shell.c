@@ -31,7 +31,11 @@ int main(__attribute__((unused)) int ac, __attribute__((unused)) char **av, char
 			free(input); input = NULL;
 		}
 
-		status = _execute(av, command, env);
+		if (is_builtin(command[0]) == 0)
+			handle_builtin(command, env);
+		else
+			status = _execute(av, command, env);
+
 
 	}
 
