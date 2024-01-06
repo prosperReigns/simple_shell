@@ -4,15 +4,15 @@
  * get_full_path - gets a command full path
  * @cmd: command to get
  * @env: environment variables
- * 
- * return * a pointer to a new string
+ *
+ * Return: a pointer to a new string
  */
 
 char *get_full_path(char *cmd, char **env)
 {
 	char *path = _getenv("PATH", env);
-
 	char *dir = strtok(path, ":");
+
 	while (dir != NULL)
 	{
 		char *full_path =  join_path(dir, '/', cmd);
@@ -34,8 +34,8 @@ char *get_full_path(char *cmd, char **env)
  * @bin_dir: directories in environment variable
  * @delim: separator
  * @cmd: user command
- * 
- * return: a pointer to a new string
+ *
+ * Return: a pointer to a new string
  */
 
 char *join_path(char *bin_dir, char delim, char *cmd)
@@ -82,8 +82,8 @@ char *join_path(char *bin_dir, char delim, char *cmd)
 /**
  * path_exist - check if a flie exist
  * @name: filename
- * 
- * return: 0 on success
+ *
+ * Return: 0 on success
  */
 
 int path_exist(char *name)

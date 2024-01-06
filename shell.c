@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * mian - shell 
+ *main - shell
  *@ac: argument count
  *@av: argument vector
  *@env: environmental variable
  *
- *return: always 0
+ *Return: always 0
  */
 
 int main(__attribute__((unused)) int ac, char **av, char **env)
@@ -26,9 +26,9 @@ int main(__attribute__((unused)) int ac, char **av, char **env)
 		}
 
 		command = tokenize(input);
-		if(command == NULL)
+		if (command == NULL)
 		{
-			free(input); input = NULL;
+			free(input);
 		}
 
 		if (is_builtin(command[0]) == 0)

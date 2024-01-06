@@ -3,12 +3,14 @@
 /**
  *_strlen - gets the lenght of a string
  *@str: string
- *return: lenght of string
+ *Return: lenght of string
  */
 
-int _strlen(char *str){
+int _strlen(char *str)
+{
 	int i;
 	int counter = 0;
+
 	for (i = 0; str[i] != '\0'; i++)
 		counter++;
 
@@ -16,18 +18,18 @@ int _strlen(char *str){
 }
 
 /**
- *_strcpy - copies string 
+ *_strcpy - copies string
  *@dest: destination to copy string
  *@src: string to copy
  *
- *return: pointer to new string
+ *Return: pointer to new string
  */
 
 char *_strcpy(char *dest, char *src)
 {
 	int i = 0;
 
-	while(src[i] != '\0')
+	while (src[i] != '\0')
 	{
 		dest[i] = src[i];
 		i++;
@@ -41,15 +43,15 @@ char *_strcpy(char *dest, char *src)
  * _strdup - duplicates a string
  * @str: string to duplicate
  *
- * return: a pointer to a new string
+ * Return: a pointer to a new string
  */
 
 char *_strdup(char *str)
 {
 	int len = _strlen(str);
 	char *string = malloc(sizeof(char) * len + 1);
-
 	int i = 0;
+
 	while (i < len)
 	{
 		string[i] = str[i];
@@ -58,7 +60,7 @@ char *_strdup(char *str)
 
 	string[i] = '\0';
 
-	return(string);
+	return (string);
 
 }
 
@@ -67,7 +69,7 @@ char *_strdup(char *str)
  * @str: string to cmpare
  * @str1: string to compare
  *
- * return: 0 on success
+ * Return: 0 on success
  */
 
 int _strcmp(char *str, char *str1)

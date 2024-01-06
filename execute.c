@@ -2,13 +2,14 @@
 
 /**
  *_execute - executes a command
+ *@av: argument vector
  *@command: an array of commands
  *@env: an array of environmental variables
  *
- *return: status of execution
+ *Return: status of execution
  */
 
-int _execute(char ** av, char **command, char **env)
+int _execute(char **av, char **command, char **env)
 {
 	pid_t child;
 	int status;
@@ -50,9 +51,9 @@ int _execute(char ** av, char **command, char **env)
 /**
  * print_error - prints error
  * @av : arguement vector
- * @cmd: command entered
+ * @command: command entered
  *
- * return: void
+ * Return: void
  */
 
 void print_error(char **av, char **command)

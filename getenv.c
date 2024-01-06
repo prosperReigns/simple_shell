@@ -4,8 +4,8 @@
  * _getenv - gets environment variable
  * @path: variable to get
  * @env: environmental variable
- * 
- * return: a pointer to a string
+ *
+ * Return: a pointer to a string
  */
 
 char *_getenv(char *path, char **env)

@@ -3,8 +3,8 @@
 /**
  * is_builtin - checks if a command is builtin or not
  * @cmd: command user entered
- * 
- * return: 0 on success
+ *
+ * Return: 0 on success
  */
 
 int is_builtin(char *cmd)
@@ -12,12 +12,12 @@ int is_builtin(char *cmd)
 	char *builtin_command[] = {"exit", "env", "cd", NULL};
 	int i = 0;
 
-	while(builtin_command[i] != NULL)
+	while (builtin_command[i] != NULL)
 	{
 		if (_strcmp(cmd, builtin_command[i]) == 0)
 			return (0);
 
-		i++; 
+		i++;
 	}
 	return (1);
 
@@ -27,7 +27,7 @@ int is_builtin(char *cmd)
  * handle_builtin - handles biultin commands
  * @cmd: commands entered by user
  * @env: environment variable
- * 
+ *
  */
 
 void handle_builtin(char **cmd, char **env)
@@ -36,7 +36,7 @@ void handle_builtin(char **cmd, char **env)
 	{
 		freeMemory(cmd);
 		logout();
-	}   
+	}
 	else if (_strcmp(cmd[0], "env") == 0)
 	{
 		print_env(env);
@@ -48,7 +48,7 @@ void handle_builtin(char **cmd, char **env)
 
 /**
  * logout - exits the shell
- * 
+ *
  */
 
 void logout(void)
@@ -59,7 +59,7 @@ void logout(void)
 /**
  * print_env - prints environment variables
  * @env: environment variable
- * 
+ *
  */
 
 void print_env(char **env)

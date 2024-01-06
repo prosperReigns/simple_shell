@@ -4,19 +4,18 @@
  *tokenize - splits a string
  *@input: string to split
  *
- *return: a pointer to splited string
+ *Return: a pointer to splited string
  */
 
-char** tokenize(char *input)
+char **tokenize(char *input)
 {
 	char *str;
 	char **command = NULL;
 	char *tokens;
 	int i = 0;
 
-	if (input == NULL){
-		return NULL;
-	}
+	if (input == NULL)
+		return (NULL);
 
 	str = _strdup(input);
 
@@ -37,7 +36,8 @@ char** tokenize(char *input)
 	}
 
 	command[i] = NULL;
-	free(str); str = NULL;
+	free(str);
+	str = NULL;
 	free(input);
 
 	return (command);
