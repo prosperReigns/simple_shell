@@ -26,11 +26,11 @@ char *get_full_path(char *cmd, char **env)
 		dir = strtok(NULL, ":");
 	}
 	free(path);
-	return (NULL);
+	return (0);
 }
 
 /**
- * join_paths - create a full command path
+ * join_path - create a full command path
  * @bin_dir: directories in environment variable
  * @delim: separator
  * @cmd: user command

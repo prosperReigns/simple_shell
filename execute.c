@@ -6,7 +6,7 @@
  *@command: an array of commands
  *@env: an array of environmental variables
  *
- *Return: status of execution
+ * Return: ststus of execution
  */
 
 int _execute(char **av, char **command, char **env)

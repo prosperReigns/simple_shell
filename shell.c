@@ -15,14 +15,14 @@ int main(__attribute__((unused)) int ac, char **av, char **env)
 	{
 		char *input;
 		char **command = NULL;
-		int status = 0;
+		int status;
 
 		input = getinput();
 		if (input == NULL)
 		{
-			if (isatty(STDIN_FILENO))
-				write(STDOUT_FILENO, "$ ", 2);
-			return (status);
+			if (isatty(STDIN_FILENO) == 0)
+				break;
+			continue;
 		}
 
 		command = tokenize(input);
@@ -35,7 +35,10 @@ int main(__attribute__((unused)) int ac, char **av, char **env)
 			handle_builtin(command, env);
 		else
 			status = _execute(av, command, env);
+		(void)status;
 
+		if (isatty(STDIN_FILENO) == 0)
+			break;
 	}
 
 
