@@ -28,6 +28,6 @@ int _strlen(char *str);
 char *_strcpy(char *dest, char *src);
 char *_strdup(char *str);
 int _strcmp(char *str, char *str1);
-int trim (char *buffer);
+int trim(char *buffer);
 
 #endif
